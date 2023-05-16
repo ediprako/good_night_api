@@ -33,4 +33,7 @@
 /config/master.key
 
 # Ignore IDE spesific file
-/.idea
+/.idea/*
+
+# Ignore byebug history
+/.byebug_history
