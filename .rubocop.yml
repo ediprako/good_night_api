@@ -1,0 +1,16 @@
+AllCops:
+  DisplayCopNames: true
+  TargetRubyVersion: 3.0.2
+  Exclude:
+    - Gemfile
+    - db/fixtures/**/*
+    - db/schema.rb
+    - db/migrate/*
+    - 'app/view/**/*.erb'
+    - 'vendor/**/*'
+    - 'node_modules/**/*'
+    - 'tmp/**/*'
+  NewCops: disable
+
+Style/Documentation:
+  Enabled: false
