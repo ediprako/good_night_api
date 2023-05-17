@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_16_130224) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_16_225511) do
+  create_table "sleeps", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.date "date", null: false
+    t.datetime "clock_in"
+    t.datetime "clock_out"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sleeps_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
     t.string "access_token", null: false

@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  has_many :sleeps
+
   def persist_with_random_token!(attempts = 10)
     retries ||= 0
     self.access_token = SecureRandom.urlsafe_base64(nil, false)
