@@ -2,6 +2,8 @@
 
 class User < ApplicationRecord
   has_many :sleeps
+  has_many :follows, class_name: 'Follow', foreign_key: 'from_user_id'
+  has_many :followers, class_name: 'Follow', foreign_key: 'to_user_id'
 
   def persist_with_random_token!(attempts = 10)
     retries ||= 0
