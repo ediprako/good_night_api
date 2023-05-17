@@ -6,6 +6,12 @@ Rails.application.routes.draw do
       get 'app', to: 'app#index'
       post 'auth', to: 'auth#login'
 
+      resources :user, only: [] do
+        collection do
+          get :sleep_history, to: 'user#sleep_history'
+        end
+      end
+
       resources :sleep, only: [] do
         post :clock_out
         collection do
