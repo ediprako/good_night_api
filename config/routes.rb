@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       post 'auth', to: 'auth#login'
 
       resources :users, only: [] do
+        resources :follows, only: %i[index create]
         collection do
           get :sleep_history
         end
