@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       post 'auth', to: 'auth#login'
 
       resources :sleep, only: [] do
+        post :clock_out
         collection do
           post :clock_in
         end
