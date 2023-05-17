@@ -3,6 +3,7 @@
 module Api
   module V1
     class AuthController < ApplicationController
+      skip_before_action :authenticate!
       def login
         user = User.find_by(name: login_params)
 
