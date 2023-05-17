@@ -2,7 +2,7 @@
 
 module Api
   module V1
-    class SleepController < ApplicationController
+    class SleepsController < ApplicationController
       def clock_in
         sleep = @current_user.sleeps.find_or_initialize_by(date: Date.current)
         render_error("already clock_in at #{sleep.clock_in}") and return unless sleep.new_record?

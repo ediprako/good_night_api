@@ -2,7 +2,7 @@
 
 module Api
   module V1
-    class UserController < ApplicationController
+    class UsersController < ApplicationController
       after_action :set_headers
       def sleep_history
         @sleeps = @current_user.sleeps.order(created_at: :desc)
