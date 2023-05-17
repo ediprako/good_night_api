@@ -20,6 +20,16 @@ RSpec.describe "Api::V1::Sleeps", type: :request do
       it 'should change sleep count' do
         expect(user.sleeps.count).to eq(1)
       end
+
+      it 'should response valid sleep data' do
+        sleep = user.sleeps.reload.first
+        expect(data).to match(
+                          id: sleep.id,
+                          date: sleep.date.as_json,
+                          clock_in: sleep.clock_in.as_json,
+                          clock_out: sleep.clock_out.as_json
+                        )
+      end
     end
   end
 end
