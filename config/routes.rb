@@ -10,7 +10,7 @@ Rails.application.routes.draw do
         resources :follows, only: %i[index create]
         resources :unfollows, only: [:create]
         collection do
-          get :sleep_history
+          get :sleep_records
         end
       end
 

@@ -4,7 +4,7 @@ module Api
   module V1
     class UsersController < ApplicationController
       after_action :set_headers
-      def sleep_history
+      def sleep_records
         @sleeps = @current_user.sleeps.order(created_at: :desc)
                                .page(params['page'] || 1).per(params['limit'] || 10)
         render_success(SleepSerializer.new(@sleeps).to_h, :ok)

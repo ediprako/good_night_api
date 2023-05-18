@@ -11,7 +11,7 @@ RSpec.describe "Api::V1::Users", type: :request do
       end
 
       it 'should response ok' do
-        get sleep_history_api_v1_users_path(user), headers: headers
+        get sleep_records_api_v1_users_path(user), headers: headers
         expect(response).to have_http_status(:ok)
       end
 
@@ -28,7 +28,7 @@ RSpec.describe "Api::V1::Users", type: :request do
           clock_out:"2023-05-10T05:00:00.000Z"
         }
 
-        get sleep_history_api_v1_users_path(user), headers: headers, params: params
+        get sleep_records_api_v1_users_path(user), headers: headers, params: params
 
         expect(data.count).to eq(1)
         expect(data.first).to match(expected)
