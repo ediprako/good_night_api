@@ -11,7 +11,7 @@ AllCops:
     - 'node_modules/**/*'
     - 'tmp/**/*'
     - spec/requests/api/v1/*
-  NewCops: disable
+  NewCops : enable
 
 Style/Documentation:
   Enabled: false

@@ -2,5 +2,7 @@
 
 FactoryBot.define do
   factory :follow do
+    from_user { user }
+    to_user { user }
   end
 end
