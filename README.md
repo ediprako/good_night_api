@@ -58,3 +58,6 @@
    $ bundle exec rails server
    ```
 3. The project will be served at `localhost` port `3001`. 
+
+## 📬 Postman Collection
+You can view postman collection [here](https://documenter.getpostman.com/view/7226454/2s93kz7R5A)
