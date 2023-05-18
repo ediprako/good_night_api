@@ -5,6 +5,11 @@ class User < ApplicationRecord
   has_many :follows, class_name: 'Follow', foreign_key: 'from_user_id'
   has_many :followers, class_name: 'Follow', foreign_key: 'to_user_id'
 
+  def follows_sleeps(from_date)
+    Sleep.where(user_id: follows.pluck(:to_user_id), date: from_date..)
+         .order(Sleep.arel_table[:duration].desc.nulls_last)
+  end
+
   def persist_with_random_token!(attempts = 10)
     retries ||= 0
     self.access_token = SecureRandom.urlsafe_base64(nil, false)

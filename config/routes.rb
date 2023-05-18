@@ -9,9 +9,13 @@ Rails.application.routes.draw do
       resources :users, only: [] do
         resources :follows, only: %i[create]
         resources :unfollows, only: %i[create]
+
         collection do
           get :sleep_records
-          resources :follows, only: %i[index]
+
+          resources :follows, only: %i[index] do
+            get :last_week_activity, on: :collection
+          end
         end
       end
 

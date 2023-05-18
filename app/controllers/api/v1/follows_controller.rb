@@ -15,6 +15,11 @@ module Api
         render_success({}, :ok)
       end
 
+      def last_week_activity
+        last_week_activity = @current_user.follows_sleeps(1.weeks.ago)
+        render_success(SleepSerializer.new(last_week_activity).to_h, :ok)
+      end
+
       private
 
       def create_params
