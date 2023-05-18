@@ -7,10 +7,11 @@ Rails.application.routes.draw do
       post 'auth', to: 'auth#login'
 
       resources :users, only: [] do
-        resources :follows, only: %i[index create]
+        resources :follows, only: %i[create]
         resources :unfollows, only: [:create]
         collection do
           get :sleep_records
+          resources :follows, only: [:index]
         end
       end
 

@@ -14,7 +14,7 @@ RSpec.describe "Api::V1::Follows", type: :request do
 
       before do
         follows
-        get api_v1_user_follows_path(to_user), headers: headers
+        get api_v1_follows_path, headers: headers
       end
 
       it 'should response ok' do
